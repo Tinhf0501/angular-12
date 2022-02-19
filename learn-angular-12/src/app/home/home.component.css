@@ -1,6 +1,24 @@
-.test{
+.test {
   border: 1px solid;
   padding: 20px;
-  box-shadow:  5px 10px red;
-  width: 400px    ;
+  box-shadow: 5px 10px red;
+  width: 100%;
+}
+.table1,
+td,
+th {
+  border-collapse: collapse;
+  border: 1px solid;
+  text-align: center;
+}
+td,
+th {
+  min-width: 100px;
+}
+.so-am {
+  color: red;
+}
+
+.so-duong {
+  color: blue;
 }

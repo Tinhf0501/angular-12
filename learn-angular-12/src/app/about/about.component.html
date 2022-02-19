@@ -1,0 +1,17 @@
+<p [appHighLight]="'green'">about works!</p>
+<p [appHighLight]="color">about works!</p>
+<p [appHighLight]="'pink'">about works!</p>
+<ul [ngSwitch]="loginName">
+  <li *ngSwitchCase="'user'">
+    <p>User is logged in...</p>
+  </li>
+  <li *ngSwitchCase="'admin'">
+    <p>Admin is logged in...</p>
+    <app-home></app-home>
+  </li>
+  <li *ngSwitchDefault>
+    <p>Please choose login name...</p>
+  </li>
+</ul>
+<h2>Counter : {{counter}}</h2>
+<h2>Counter binh phuong : {{counter2}}</h2>

@@ -1,2 +1,14 @@
-<h3 class="text-danger">Đây là App Component 123567</h3>
-<app-home></app-home>
+<!-- <div style="width: 50%; margin: 0 auto">
+  <h3 class="text-danger">Đây là App Component 123567</h3>
+  <app-home></app-home>
+</div> -->
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active">Home Component</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About Component</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

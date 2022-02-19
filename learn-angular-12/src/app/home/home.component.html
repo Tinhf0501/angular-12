@@ -1,3 +1,79 @@
 <div class="test">
   <h3 class="text-success">Đây là Home Component 12345678910</h3>
+  <h4 class="text-danger">Written by {{ name }}</h4>
+  <!-- <input type="text" name="" id="" disabled [value]="name" class="form-control"><br>
+  <input type="text" name="" id="" disabled [value]="name" class="form-control" title="đây là {{name}}"><br> -->
+  <input
+    type="text"
+    [(ngModel)]="name"
+    class="form-control"
+    [title]="'đây là ' + name"
+  />
+  <!-- <h2 *ngIf="age>=18" class="text-danger">Bạn đã đến tuổi nhập ngũ!</h2>
+  <h2 *ngIf="age<18" class="text-success">Bạn chưa đến tuổi nhập ngũ!</h2> -->
+
+  <div *ngIf="age >= 18; then gia; else tre"></div>
+  <ng-template #tre
+    ><h2 class="text-success">Bạn chưa đến tuổi nhập ngũ!</h2></ng-template
+  >
+  <ng-template #gia
+    ><h2 class="text-danger">Bạn đã đến tuổi nhập ngũ!</h2></ng-template
+  >
+
+  <ng-template [ngIf]="age >= 18"
+    ><h2 class="text-danger">Bạn đã đến tuổi nhập ngũ!</h2></ng-template
+  >
+  <ng-template [ngIf]="age < 18"
+    ><h2 class="text-success">Bạn chưa đến tuổi nhập ngũ!</h2></ng-template
+  >
+
+  <button class="btn btn-dark" (click)="resetName()">RESET NAME</button>
+
+  <h3 class="text-left">Danh sách trái cây</h3>
+  <ul class="list-unstyled">
+    <li
+      *ngFor="let t of traicay; let i = index"
+      class="text-primary text-left font-weight-bold"
+    >
+      {{ i + 1 }}: {{ t }}
+    </li>
+  </ul>
+
+  <table class="table1">
+    <tr>
+      <th>STT</th>
+      <th>Ten</th>
+      <th>Gia</th>
+      <th>Sale</th>
+    </tr>
+    <tr *ngFor="let t of traicay2; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ t.ten | uppercase }}</td>
+      <td>
+        <span [ngClass]="t.gia < 0 ? 'so-am' : 'so-duong'">{{
+          t.gia | currency: "USD":"symbol":"1.2"
+        }}</span>
+      </td>
+      <td>
+        <span [ngClass]="t.haGia ? 'so-am' : 'so-duong'">{{
+          t.haGia | onSale | uppercase
+        }}</span>
+      </td>
+    </tr>
+  </table>
+
+  <br />
+  <label for="cars" class="font-weight-bold">Tỉnh Thành Phố:</label>
+
+  <select id="city" class="form-control" (change)="changeData($event)">
+    <option *ngFor="let c of vn" value="{{ c.city }}">{{ c.city }}</option>
+  </select>
+
+  <label for="cars" class="font-weight-bold">Tỉnh Quận / Huyện:</label>
+
+  <select id="district" class="form-control">
+    <option *ngFor="let c of districtAll" value="{{ c }}">{{ c }}</option>
+  </select>
+  <h2>Counter : {{ counter }}</h2>
+  <h2>Counter binh phuong : {{ counter2 }}</h2>
 </div>
